@@ -37,9 +37,9 @@ export const english = {
     "intro": "Klemen Španring competes in mountain and trail running. His races include OCC at UTMB Mont-Blanc and Lavaredo 50K.",
     "stats": [
       [
-        "46th",
+        "50th",
         "OCC · 2026",
-        "6:23:20 · men"
+        "6:23:20"
       ],
       [
         "12th",

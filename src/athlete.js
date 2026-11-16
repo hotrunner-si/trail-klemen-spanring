@@ -5,16 +5,17 @@ export default {
   "contacts": {
     "strava": "https://www.strava.com/pros/25573456",
     "instagram": "https://www.instagram.com/klemenspanring/",
-    "email": ""
+    "email": "klemen.spanring@gmail.com"
   },
+  "bio": "Klemen Španring tekmuje v gorskem in trail teku ter turnem smučanju. Na svetovnem prvenstvu v Morginsu je v vzponu osvojil naslov svetovnega prvaka do 23 let.",
   "trail": {
     "title": "Trail tek",
     "intro": "Klemen Španring nastopa v gorskem in trail teku. Med njegovimi nastopi sta OCC na UTMB Mont-Blanc in Lavaredo 50K.",
     "stats": [
       [
-        "46. mesto",
+        "50. mesto",
         "OCC · 2026",
-        "6:23:20 · med moškimi"
+        "6:23:20"
       ],
       [
         "12. mesto",

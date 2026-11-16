@@ -1,4 +1,4 @@
-const versions = [2, 3, 4, 5]
+const versions = [1, 2, 3, 4, 5]
 
 export function variantEntries(entry, vue) {
   const barePaths = new Set(versions.map((version) => `/v${version}`))
