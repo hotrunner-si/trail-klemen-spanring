@@ -1,14 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import athlete from './athlete.js'
 import { utmbResults } from './utmb-results.js'
 
 const props = defineProps({ version: String, imageBase: String })
-const isSplit = props.version === 'v2'
+const isSplit = false
 const isCompact = props.version === 'v3'
-const menu = isCompact
+const menu = computed(() => {
+  const items = isCompact
   ? [['trail', 'Trail tek'], ['skimo', 'Skimo'], ['contact', 'Kontakti']]
   : [['about', 'O meni'], ['results', 'Rezultati'], ['gallery', 'Galerija'], ['contact', 'Kontakt']]
+  return isCompact ? [['about', 'O meni'], ...items] : items
+})
 
 const active = ref('about')
 const sports = [
@@ -17,7 +20,7 @@ const sports = [
     label: 'Trail tek',
     sourceLabel: 'Profil UTMB',
     ...athlete.trail,
-    stats: isCompact ? utmbResults : athlete.trail.stats,
+    stats: utmbResults,
   },
   { id: 'skimo', label: 'Skimo', sourceLabel: 'Rezultati PZS', ...athlete.skimo },
 ]
@@ -46,9 +49,9 @@ const contacts = [
 
     <div class="content">
       <nav v-if="!isSplit" aria-label="Vsebina">
-        <button v-for="[id, label] in menu" :key="id" type="button"
+        <button v-for="[id, label] in menu" :key="id" :data-label="label" type="button"
           :aria-pressed="active === id" @click="active = active === id && isCompact ? 'about' : id">
-          {{ label }}
+          <span class="nav-label">{{ label }}</span>
         </button>
       </nav>
 
